@@ -1,3 +1,4 @@
+import Chart from "chart.js";
 const app = document.getElementById("root");
 const container = document.createElement("div");
 container.setAttribute("class", "container");
@@ -45,6 +46,17 @@ connection.onload = function () {
   //  if (connection.status >= 200 && request.status < 400) {
         console.log(data.data[0].name);
         console.log(data);
+
+    var setdata = { datasets: [{ data: [data.data[0].percent, data.data[1].percent, data.data[2].percent, data.data[3].percent, data.data[4].percent], backgroundColor: ["#FF6384", "#4BC0C0", "#FFCE56", "#E7E9ED", "#36A2EB", "#123123"], label: "My dataset" }], labels: [data.data[0].name, data.data[1].name, data.data[2].name, data.data[3].name, data.data[4].name] }; // for legend
+    var ctx = document.getElementById("myChart").getContext('2d');;
+    new Chart(ctx, {
+        data: setdata,
+        type: 'polarArea'
+    });
+
+
+
+
       //  chunks = [];
       //  var result;
        // result = {};
@@ -66,33 +78,5 @@ connection.onload = function () {
   //  }
 };
 connection.send();
-import Chart from "chart.js";
+
 // added hard coded chart
-var data = {
-    datasets: [{
-        data: [
-            40.36, 32.4, 18.64, 8.13
-        ],
-        backgroundColor: [
-            "#FF6384",
-            "#4BC0C0",
-            "#FFCE56",
-            "#E7E9ED",
-            "#36A2EB",
-
-        ],
-        label: 'My dataset' // for legend
-    }],
-    labels: [
-        "CSS",
-        "JavaScript",
-        "HTML",
-        "JSON"
-
-    ]
-};
-var ctx = document.getElementById("myChart").getContext('2d');;
-new Chart(ctx, {
-    data: data,
-    type: 'polarArea'
-});
