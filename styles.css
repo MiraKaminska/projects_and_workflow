@@ -30,6 +30,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
+    height: 15%;
 }
 
 .projects_list, .polar_area
@@ -41,8 +42,7 @@
 
 .container 
 {
-    display: flex;
-    flex-direction: column;
+    display: table-cell;
     float: left;
     width: 50%;
 }
@@ -57,3 +57,9 @@
     text-align: justify;
 }
 
+#chart {
+  height: 400px;
+  width: 48%;
+  float: right;
+
+}
