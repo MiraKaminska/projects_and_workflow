@@ -66,7 +66,7 @@ connection.onload = function () {
   //  }
 };
 connection.send();
-
+import Chart from "chart.js";
 // added hard coded chart
 var data = {
     datasets: [{
@@ -91,7 +91,7 @@ var data = {
 
     ]
 };
-var ctx = document.getElementById("myChart");
+var ctx = document.getElementById("myChart").getContext('2d');;
 new Chart(ctx, {
     data: data,
     type: 'polarArea'

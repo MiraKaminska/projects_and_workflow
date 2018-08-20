@@ -59,7 +59,8 @@
 
 #chart {
   height: 400px;
-  width: 48%;
+  width: 49%;
   float: right;
+  margin-right: 50%;
 
 }
