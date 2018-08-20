@@ -1,0 +1,59 @@
+
+.our_work_footer
+{  
+   margin: 0 0;
+   max-width: 100%;
+   display: table;
+   background-color: #000;
+   width: 100%;
+   height: 152px;
+   text-align: center;
+}
+#root 
+{
+  max-width: 100%;
+  margin: 0 0;
+}
+.our_work_footer .title
+{
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.projects
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.projects_list, .polar_area
+{
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+}
+
+.container 
+{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 50%;
+}
+.card 
+{
+    width: 670px;
+    height: 87px;
+    margin-left: 107px;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-align: justify;
+}
+
