@@ -38,6 +38,7 @@
     color: #000;
     font-family: 'Roboto', sans-serif;
     font-size: 38px;
+    margin-top:25%;
 }
 
 .container 
@@ -62,5 +63,6 @@
   width: 49%;
   float: right;
   margin-right: 50%;
+  margin-top: 20%;
 
 }
