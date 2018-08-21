@@ -1,4 +1,3 @@
-import Chart from "chart.js";
 const app = document.getElementById("root");
 const container = document.createElement("div");
 container.setAttribute("class", "container");
@@ -29,7 +28,8 @@ request.onload = function () {
     }    
 }
 
-request.send();
+request.send(); 
+
 var connection = new XMLHttpRequest();
 connection.open(
     "GET",
@@ -42,41 +42,15 @@ connection.setRequestHeader(
 );
 connection.onload = function () {
     // Begin accessing JSON data here
-    var data = JSON.parse(this.response);
-  //  if (connection.status >= 200 && request.status < 400) {
-        console.log(data.data[0].name);
-        console.log(data);
-
-    var setdata = { datasets: [{ data: [data.data[0].percent, data.data[1].percent, data.data[2].percent, data.data[3].percent, data.data[4].percent], backgroundColor: ["#FF6384", "#4BC0C0", "#FFCE56", "#E7E9ED", "#36A2EB", "#123123"], label: "My dataset" }], labels: [data.data[0].name, data.data[1].name, data.data[2].name, data.data[3].name, data.data[4].name] }; // for legend
-    var ctx = document.getElementById("myChart").getContext('2d');;
+    var jsonConverted = JSON.parse(this.response);
+    console.log(jsonConverted.data[0].name);
+    console.log(jsonConverted);
+    data = jsonConverted["data"];
+    var setdata = { datasets: [{ data: [data[0]["percent"], data[1]["percent"], data[2]["percent"], data[3]["percent"]], backgroundColor: ["#FF6384", "#4BC0C0", "#FFCE56", "#E7E9ED", "#36A2EB"], label: "My dataset" }], labels: [data[0]["name"], data[1]["name"], data[2]["name"], data[3]["name"] }; // for legend
+    var ctx = document.getElementById("myChart");
     new Chart(ctx, {
         data: setdata,
         type: 'polarArea'
     });
-
-
-
-
-      //  chunks = [];
-      //  var result;
-       // result = {};
-       // data = chunks.join();
-       // if (typeof json === 'object') {
-       //     result = {};
-        //   Object.keys(data).sort().forEach(function (key) {
-         //       result[key] = data[key];
-          //  });
-      //  } else {
-       //     result = data;
-      // }
-      //  result = JSON.stringify(result, null, 2);
-       // console.log(result);
- //   });
-
-  //  } else {
-    //    console.log("error");
-  //  }
-};
+}   
 connection.send();
-
-// added hard coded chart

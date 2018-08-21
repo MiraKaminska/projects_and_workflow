@@ -30,7 +30,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
-    height: 15%;
+    height:25%;
 }
 
 .projects_list, .polar_area
@@ -38,14 +38,14 @@
     color: #000;
     font-family: 'Roboto', sans-serif;
     font-size: 38px;
-    margin-top:25%;
+    margin-top: 60%;
 }
 
 .container 
 {
     display: table-cell;
     float: left;
-    width: 50%;
+    width: 45%;
 }
 .card 
 {
@@ -59,10 +59,10 @@
 }
 
 #chart {
-  height: 400px;
-  width: 49%;
+  height: 800px;
+  width: 800px;
   float: right;
-  margin-right: 50%;
-  margin-top: 20%;
+  margin-right: 107px;
+  margin-top: 45%;
 
 }
